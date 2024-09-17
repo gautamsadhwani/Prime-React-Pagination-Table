@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { DataTable, DataTablePageParams } from 'primereact/datatable';
+import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -62,7 +62,7 @@ const MaterialTable: React.FC = () => {
     fetchMaterialData(first, rows);
   }, [first, rows]);
 
-  const onPageChange = (e: DataTablePageParams): void => {
+  const onPageChange = (e: {first : number; rows: number}): void => {
     setFirst(e.first);
     setRows(e.rows);
   };
